@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3" ng-controller="TodoCtrl">
+    <h1>Angular Example Application</h1>
+    <hr>
+    <h3>Search for a ToDo</h3>
+    <input ng-model="query">
+    <ul>
+      <li animate ng-repeat="todo in todos | filter:query">
+        {{todo.title}}
+        <i class="fa fa-check fa-lg" ng-click="remove($index)"></i>
+      </li>
+    </ul>
+    <section class="center">
+      <h3>New ToDo</h3>
+      <input ng-model="todo">
+      <button class="btn btn-primary" ng-click="addTodo()">Add ToDo</button>
+      <p>{{warning}}</p>
+    </section>
+  </div>
+</div>
